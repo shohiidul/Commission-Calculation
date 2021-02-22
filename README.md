@@ -7,6 +7,7 @@ This is mini calculation application base on input data as CSV format. Sample fi
 ## Installation
 - Clone the repository in your desire folder
 - run "symfony serve" on cmd from your project root folder
+- now you can browse it over any browser hitting this url "http://127.0.0.1:8000/"
 
 ## UnitTest
 - There is a sample unittest file in tests folder
