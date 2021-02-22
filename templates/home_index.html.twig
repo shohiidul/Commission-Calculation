@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Home {% endblock %}          
+
+{% block stylesheets %} {% endblock %}          
+{% block javascripts %} {% endblock %}          
+
+{% block body %}
+
+	<h3>Commission fee calculation</h3>
+
+	<form action="{{path('home_calculation')}}" enctype="multipart/form-data" method="POST">
+
+		<input type="hidden" name="_csrf_token" value="{{ csrf_token('calculation') }}" />
+
+		Transaction: <input type="file" name="transaction" accept=".csv"> [CSV file only] <br> <br>
+		
+		<button class="btn btn-primary btn-sm" type="submit">Calculate</button>
+	</form>
+
+{% endblock %}          
