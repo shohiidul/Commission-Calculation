@@ -53,7 +53,4 @@ class ExchangeratesData
 		return $rates;
 	}
 
-
-
-
 }

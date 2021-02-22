@@ -13,6 +13,12 @@ class Math
 	private $private_withdraw_charge 	= 0.3;
 	private $charge_free_amount 	    = 1000;
 
+	/**
+	 * [calculatePercent]
+	 * @param  float  $amount [total amount to be calculate]
+	 * @param  float  $rate   [percent rate]
+	 * @return float         [calculate rate]
+	 */
 	public function calculatePercent( float $amount, float $rate )
 	{
 		return (( $amount/100 ) * $rate);
@@ -48,6 +54,13 @@ class Math
 		return $this->roundUpPrice( $this->calculatePercent( $amount, $this->private_withdraw_charge ) );
 	}
 
+	/**
+	 * [setUniUserArray is a method for setting array values for calculating private user withdraw]
+	 * @param int    $index   [for to ser array index no]
+	 * @param float  $amount  [amout for calculation]
+	 * @param string $date    [transaction date]
+	 * @param int    $day_num [day num of the week by given date]
+	 */
 	public function setUniUserArray( int $index, float $amount, string $date, int $day_num  ) : array
 	{
 		$data[ $index ]['amount'] = $amount;
@@ -57,7 +70,13 @@ class Math
 		return $data;
 	}
 
-	public function calculateCharge( array $data, array $exchangerates=array() )
+	/**
+	 * [calculateCharge is a method for calculating all type charge]
+	 * @param  array  $data          [CSV input data]
+	 * @param  array  $exchangerates [exchange rate list]
+	 * @return array [calculated array set]
+	 */
+	public function calculateCharge( array $data, array $exchangerates=array() ) : array
 	{
 		$week_days 		 = new WeekDays();
 		$private_clients_free_limit = array();
