@@ -26,17 +26,20 @@ class ExchangeratesData
 
 		$result = curl_exec($url);		
 
-		if (curl_errno($url)) {
+		if (curl_errno($url)) 
+		{
 		    $error_msg = curl_error($url);
 		}
 		curl_close($url);
 
 		$resultdata = array();
-		if (isset($error_msg)) {
+		if (isset($error_msg)) 
+		{
 			$resultdata['flag'] = false;
 			$resultdata['msg']  = $error_msg;	    
 		}	
-		else {
+		else 
+		{
 			$resultdata['flag'] = true;
 			$resultdata['msg']  = 'success';
 			$resultdata['data'] = json_decode($result, true);

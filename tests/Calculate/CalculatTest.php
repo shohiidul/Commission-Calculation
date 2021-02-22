@@ -36,12 +36,14 @@ class CalculatTest extends TestCase
 
 			foreach ( $data as $key => $row ) 
 			{
-				if( $row[6]!=$comm[$key] ){
+				if( $row[6]!=$comm[$key] ) 
+				{
 					$assert = false;
 				}	
 			}
 
-			if( count($data)!=17 ){
+			if( count($data)!=17 )
+			{
 				$assert = false;
 			}	
 
